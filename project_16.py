@@ -14,7 +14,7 @@ warnings.filterwarnings("ignore", category=UserWarning)
 
 # ANÁLISE EXPLORATÓRIA
 # Carregamento dos Dados Inicial
-dataset = pandas.read_csv('dados_pocos.csv')
+dataset = pandas.read_csv('original_dataset.csv')
 dataset.columns = ["item", "nome", "fase", "tipo", "lda", "dn", "metragem", "nfases"]
 
 # Análise das Variáveis com Dados Distintos

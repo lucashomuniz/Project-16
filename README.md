@@ -1,1 +1,21 @@
-# Project-16
+# ✅ PROJECT-16
+
+This project was conceived with the aim of identifying information to guide an oil extraction company in making strategic decisions related to its drilling projects. By considering a specific well as a reference point, we sought to determine which other wells share the most similar characteristics to it. The answer to this inquiry is a list of the closest correlated wells. Utilizing the Python language and its extensive data analysis tools, it was necessary to develop a model. This model was trained with the data contained in the original CSV file so that, when providing a well as input, the algorithm would be able to return a list of the four most correlated wells.
+
+Keywords: Python, Pandas, Numpy, Sklearn, DecisionTreeClassifier, Data Analysis, Data Science, Machine Learning.
+
+# ✅ PROCESS
+
+Initially, a thorough exploratory analysis of the dataset was conducted to examine all its characteristics. This analysis involved the development of specific functions to evaluate variables with different data types, analyze the typology, format, and description of the data, as well as identify null data, zero values, and the count of distinct data in specific variables. Exploratory analysis also detected duplicates and explored correlations between numerical variables, significantly contributing to the understanding of the dataset.
+
+Subsequently, a function was created to load the data, ensuring proper formatting of the variable names. During exploratory analysis, it was observed that the "type" variable presented four different types of data, but the project guidelines required only two types of wells (vertical and horizontal), leading to the filtering of the dataset to meet this requirement. This resulted in a reduction in the dataset size from 10.6K to about 6.6K rows.
+
+In the next step, functions were developed for data preprocessing, including the application of label encoding to convert object-type variables into int or float, making them compatible with machine learning algorithms. Specifically, label encoding was applied to the "type," "dn," and "codename" variables. The "type" variable data were converted to numerical values, with "vertical" represented by 1 and "horizontal" by 0. For the "dn" variable, a secondary function was developed for decimal value conversion, while the "codename" variable was created to transform the "name" variable from object to numeric.
+
+The data were then divided into training and testing sets (70%/30%), and a Decision Tree model was trained using the secondary variables ('phase', 'type', 'lda', 'dn', 'length', 'phases') and the main/target variable 'codename'. Although the original idea was to compare various algorithms, the dataset characteristics led to the decision to use only one machine learning algorithm due to the similarity in the results obtained by different algorithms. Next, the main functions were developed: "calculate_error" to calculate the error percentage between input and output data, and "find_closest_predictions" to find the four closest predictions with distinct "codenames".
+
+# ✅ CONCLUSION
+
+In conclusion, the project achieved its goal of providing valuable guidance to the oil extraction company, assisting in strategic decision-making related to drilling projects. Through the application of advanced data analysis and machine learning techniques, we were able to identify the most correlated wells based on specific characteristics, presenting a list of the top four suggestions. Additionally, by including the error percentage and data from the secondary variables in the provided suggestions, we offered a comprehensive view of the recommendation process, allowing for a more thorough and informed evaluation by the decision-making team.
+
+It is essential to emphasize that the algorithm's result, expressed in the "codename" variable, provides a clear reference to identify the suggested wells. To associate each "codename" with the respective actual well, we provided the "new_dataset.csv" file, which contains the correlation between the "name" and "codename" variables, ensuring transparency and reliability in the presented results. Finally, this project not only provides accurate and well-founded recommendations but also establishes a solid framework for future analyses and decision-making in the context of oil exploration.
